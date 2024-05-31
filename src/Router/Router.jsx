@@ -1,10 +1,30 @@
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
-import App from "../App";
+import Home from "../pages/Home";
+import ErrorPage from "../components/ErrorPage";
+import Login from "../pages/auth/Login";
+import UserRegister from "../pages/auth/UserRegister";
+import BusinessRegister from "../pages/auth/BusinessRegister";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <App />,
+    element: <Home />,
+    errorElement: <ErrorPage />,
+  },
+  {
+    path: "/login",
+    element: <Login />,
+    errorElement: <ErrorPage />,
+  },
+  {
+    path: "/register",
+    element: <UserRegister />,
+    errorElement: <ErrorPage />,
+  },
+  {
+    path: "/business-register",
+    element: <BusinessRegister />,
+    errorElement: <ErrorPage />,
   },
 ]);
 
