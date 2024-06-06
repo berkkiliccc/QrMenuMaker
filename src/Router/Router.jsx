@@ -4,6 +4,9 @@ import ErrorPage from "../components/ErrorPage";
 import Login from "../pages/auth/Login";
 import UserRegister from "../pages/auth/UserRegister";
 import BusinessRegister from "../pages/auth/BusinessRegister";
+import Profile from "../pages/Profıle/Profile";
+import Inventory from "../pages/Inventory/Inventory";
+import QrMenu from "../pages/QrMenu/QrMenu";
 
 const router = createBrowserRouter([
   {
@@ -24,6 +27,26 @@ const router = createBrowserRouter([
   {
     path: "/business-register",
     element: <BusinessRegister />,
+    errorElement: <ErrorPage />,
+  },
+  {
+    path: "/profile/:userId",
+    element: <Profile />,
+    errorElement: <ErrorPage />,
+  },
+  {
+    path: "/inventory",
+    element: <Inventory />,
+    errorElement: <ErrorPage />,
+  },
+  {
+    path: "/inventory/:inventoryId",
+    element: <Inventory />,
+    errorElement: <ErrorPage />,
+  },
+  {
+    path: "/qr-menu",
+    element: <QrMenu />,
     errorElement: <ErrorPage />,
   },
 ]);

@@ -13,9 +13,9 @@ export default function Navbar() {
   };
 
   return (
-    <div className="navbar z-50 bg-base-300 text-black ">
-      <div className="flex-1">
-        <div tabIndex={0} className="ml-2">
+    <div className="navbar z-50 bg-base-300 text-black  ">
+      <div className="flex-1  ">
+        <div tabIndex={0} className="ml-2 ">
           <div className="w-10 ">
             <img
               alt="pionpos"
@@ -23,17 +23,28 @@ export default function Navbar() {
             />
           </div>
         </div>
-        <a href="/" className="btn btn-ghost text-xl">
+
+        <a href="/" className="font-medium ml-3 text-xl">
           Qr Menu Maker
         </a>
+        <a
+          href="/inventory"
+          className="btn btn-ghost ml-12 text-xl max-lg:hidden "
+        >
+          Envanter
+        </a>
+        <a href="/qr-menu" className="btn btn-ghost ml-6 text-xl max-lg:hidden">
+          QR Menu
+        </a>
       </div>
+
       {auth.currentUser !== null && (
-        <div className="flex-none">
-          <div className="dropdown dropdown-end">
+        <div className="flex-none items-center  ">
+          <div className="dropdown dropdown-end ">
             <div
               tabIndex={0}
               role="button"
-              className="btn btn-ghost btn-circle avatar"
+              className="btn btn-ghost btn-circle avatar "
             >
               <div className="w-10 ">
                 <img
@@ -45,6 +56,7 @@ export default function Navbar() {
                 />
               </div>
             </div>
+
             <ul
               tabIndex={0}
               className="menu menu-sm dropdown-content mt-3 z-50 p-2 shadow bg-base-100 rounded-box w-52 text-black"
@@ -54,12 +66,33 @@ export default function Navbar() {
                   href={`/profile/${auth.currentUser.uid}`}
                   className="justify-between btn m-1 btn-sm"
                 >
-                  <button className="">Profil</button>
+                  <button className="text-lg">Profil</button>
                   <span className="badge bg-lime-500">New</span>
                 </a>
               </li>
               <li>
-                <button className="btn m-1 btn-sm">Settings</button>
+                <a
+                  href={`/inventory`}
+                  className="justify-between btn m-1 btn-sm md:hidden"
+                >
+                  <button className="text-lg">Envanter</button>
+                </a>
+              </li>
+              <li>
+                <a
+                  href={`/profile/${auth.currentUser.uid}`}
+                  className="justify-between btn m-1 btn-sm md:hidden"
+                >
+                  <button className="text-lg">Qr Menu Ayarları</button>
+                </a>
+              </li>
+              <li>
+                <a
+                  href={`/profile/${auth.currentUser.uid}`}
+                  className="justify-between btn m-1 btn-sm "
+                >
+                  <button className="text-lg">Settings</button>
+                </a>
               </li>
               <li>
                 <button
